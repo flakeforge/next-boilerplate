@@ -1,0 +1,71 @@
+commit_msg=$(head -n 1 "$1")
+
+check_commit_type() {
+    echo "$commit_msg" | grep -E "^(feat|fix|docs|style|refactor|test|chore)(\(.+\))?: .+"
+}
+
+staged_files=$(git diff --cached --name-only)
+
+# Initialize flags
+run_lint=false
+run_types=false
+run_tests=false
+run_format=false
+
+determine_checks() {
+    if echo "$commit_msg" | grep -q "^docs:"; then
+        run_format=true
+    elif echo "$commit_msg" | grep -q "^style:"; then
+        run_lint=true
+        run_format=true
+    elif echo "$commit_msg" | grep -q "^test:"; then
+        run_tests=true
+    else
+        # Default behavior for other types (refactor, chore, etc.)
+        run_lint=true
+        run_types=true
+        run_format=true
+        run_tests=true
+    fi
+}
+
+if ! check_commit_type; then
+    echo "❌ Invalid commit message format."
+    echo "Please use format: type(scope?): message"
+    echo "Types: feat, fix, docs, style, refactor, test, chore"
+    exit 1
+fi
+
+# For debugging - print the commit type
+echo "📝 Commit type: $commit_msg"
+
+determine_checks
+
+if [ "$run_lint" = true ]; then
+    echo "🔍 Running lint..."
+    pnpm lint || exit 1
+fi
+
+if [ "$run_types" = true ]; then
+    echo "📝 Checking types..."
+    pnpm types || exit 1
+fi
+
+# if [ "$run_tests" = true ]; then
+#     echo "🧪 Running tests..."
+#     pnpm test || exit 1
+# fi
+
+if [ "$run_format" = true ]; then
+    echo "✨ Formatting code..."
+    pnpm format || exit 1
+fi
+
+# Check if formatting made any changes
+if ! git diff --staged --quiet; then
+    echo "📝 Changes detected after formatting. Staging formatted files..."
+    git add .
+fi
+
+echo "✅ Pre-commit checks passed!"
+exit 0
