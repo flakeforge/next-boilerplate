@@ -14,7 +14,10 @@ interface Props {
   params: Promise<{ locale: string }>
 }
 
-const LocaleLayout: FC<PropsWithChildren<Props>> = async ({ children, params }) => {
+const LocaleLayout: FC<PropsWithChildren<Props>> = async ({
+  children,
+  params,
+}) => {
   const { locale } = await params
 
   if (!hasLocale(routing.locales, locale)) {

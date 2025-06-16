@@ -56,11 +56,6 @@ fi
 #     pnpm test || exit 1
 # fi
 
-if [ "$run_format" = true ]; then
-    echo "✨ Formatting code..."
-    pnpm format || exit 1
-fi
-
 # Check if formatting made any changes
 if ! git diff --staged --quiet; then
     echo "📝 Changes detected after formatting. Staging formatted files..."

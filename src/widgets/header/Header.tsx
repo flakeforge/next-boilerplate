@@ -10,7 +10,10 @@ export const Header: FC = () => {
     <header className="flex items-center justify-between">
       <p>header</p>
 
-      <button type="button" onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
+      <button
+        type="button"
+        onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+      >
         {theme === 'dark' ? 'light mode' : 'dark mode'}
       </button>
     </header>
