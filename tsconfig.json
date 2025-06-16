@@ -3,27 +3,52 @@
     "incremental": true,
     "target": "ES2017",
     "jsx": "preserve",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "baseUrl": ".",
     "module": "esnext",
     "moduleResolution": "bundler",
     "paths": {
-      "@app/*": ["src/app/*"],
-      "@shared/*": ["src/shared/*"],
-      "@entities/*": ["src/entities/*"],
-      "@features/*": ["src/features/*"],
-      "@widgets/*": ["src/widgets/*"],
-      "@modules/*": ["src/modules/*"],
-      "@styles/*": ["src/shared/styles/*"],
-      "@config/*": ["src/shared/config/*"],
-      "@utils/*": ["src/shared/utils/*"],
-      "@lib/*": ["src/shared/lib/*"]
+      "@app/*": [
+        "src/app/*"
+      ],
+      "@shared/*": [
+        "src/shared/*"
+      ],
+      "@entities/*": [
+        "src/entities/*"
+      ],
+      "@features/*": [
+        "src/features/*"
+      ],
+      "@widgets/*": [
+        "src/widgets/*"
+      ],
+      "@modules/*": [
+        "src/modules/*"
+      ],
+      "@styles/*": [
+        "src/shared/styles/*"
+      ],
+      "@config/*": [
+        "src/shared/config/*"
+      ],
+      "@utils/*": [
+        "src/shared/utils/*"
+      ],
+      "@lib/*": [
+        "src/shared/lib/*"
+      ]
     },
     "resolveJsonModule": true,
     "allowJs": true,
     "strict": true,
     "noEmit": true,
     "esModuleInterop": true,
+    "isolatedModules": true,
     "skipLibCheck": true,
     "plugins": [
       {
@@ -35,10 +60,10 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    ".next/types/**/*.ts",
-    "eslint.config.mjs",
-    "postcss.config.mjs",
-    "scripts/*.mjs"
+    ".next/types/**/*.ts"
   ],
-  "exclude": ["node_modules", ".next"]
+  "exclude": [
+    "node_modules",
+    ".next"
+  ]
 }
