@@ -21,8 +21,6 @@
   <img alt="ESLint" src="https://img.shields.io/badge/Linting-ESLint-4B32C3?style=flat&logo=eslint&logoColor=white&labelColor=20222d" />
 </p>
 
-
-
 ## Stack technologies
 - [React](https://react.dev/learn) + [Typescript](https://www.typescriptlang.org/docs/) - UI library and Strict type safety
 - [Tailwind CSS](https://tailwindcss.com) — Utility-first styling

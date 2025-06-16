@@ -1,16 +1,16 @@
-import { type FC, type PropsWithChildren } from 'react'
-import { notFound } from 'next/navigation'
-import { hasLocale, NextIntlClientProvider } from 'next-intl'
-
+import type { FC, PropsWithChildren } from 'react'
 import { Layout } from '@app/layouts'
 import { ThemeProvider } from '@app/providers'
+
 import { routing } from '@lib/i18n'
+import { hasLocale, NextIntlClientProvider } from 'next-intl'
+import { notFound } from 'next/navigation'
 
 import '@styles/globals.css'
 
 export { metadata, viewport } from './config'
 
-type Props = {
+interface Props {
   params: Promise<{ locale: string }>
 }
 
