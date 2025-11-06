@@ -2,7 +2,7 @@
   "compilerOptions": {
     "incremental": true,
     "target": "ES2017",
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "lib": [
       "dom",
       "dom.iterable",
@@ -29,18 +29,6 @@
       ],
       "@modules/*": [
         "src/modules/*"
-      ],
-      "@styles/*": [
-        "src/shared/styles/*"
-      ],
-      "@config/*": [
-        "src/shared/config/*"
-      ],
-      "@utils/*": [
-        "src/shared/utils/*"
-      ],
-      "@lib/*": [
-        "src/shared/lib/*"
       ]
     },
     "resolveJsonModule": true,
@@ -60,7 +48,8 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    ".next/types/**/*.ts"
+    ".next/types/**/*.ts",
+    ".next/dev/types/**/*.ts"
   ],
   "exclude": [
     "node_modules",

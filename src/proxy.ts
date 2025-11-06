@@ -1,8 +1,8 @@
-import { DEFAULT_LOCALE, LOCALES } from '@lib/i18n'
+import { DEFAULT_LOCALE, LOCALES } from '@shared/lib'
 
-import createMiddleware from 'next-intl/middleware'
+import createProxy from 'next-intl/middleware'
 
-export default createMiddleware({
+export default createProxy({
   locales: LOCALES,
   defaultLocale: DEFAULT_LOCALE,
   localePrefix: 'always',

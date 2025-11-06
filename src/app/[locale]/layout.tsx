@@ -1,40 +1,29 @@
 import type { FC, PropsWithChildren } from 'react'
 import { Layout } from '@app/layouts'
-import { ThemeProvider } from '@app/providers'
-
-import { routing } from '@lib/i18n'
-import { hasLocale, NextIntlClientProvider } from 'next-intl'
-import { notFound } from 'next/navigation'
-
-import '@styles/globals.css'
+import { MainProvider } from '@app/providers'
+import { routing } from '@shared/lib'
+import { getLocale } from 'next-intl/server'
+import '@shared/styles/globals.css'
 
 export { metadata, viewport } from './config'
 
-interface Props {
-  params: Promise<{ locale: string }>
+export function generateStaticParams() {
+  return routing.locales.map(locale => ({ locale }))
 }
 
-const LocaleLayout: FC<PropsWithChildren<Props>> = async ({
-  children,
-  params,
-}) => {
-  const { locale } = await params
-
-  if (!hasLocale(routing.locales, locale)) {
-    notFound()
-  }
+const RootLayout: FC<PropsWithChildren> = async ({ children }) => {
+  const locale = await getLocale()
 
   return (
     <html suppressHydrationWarning lang={locale}>
       <body>
-        <NextIntlClientProvider>
-          <ThemeProvider>
-            <Layout>{children}</Layout>
-          </ThemeProvider>
-        </NextIntlClientProvider>
+        <MainProvider>
+          <Layout>{children}</Layout>
+        </MainProvider>
       </body>
     </html>
   )
 }
 
-export default LocaleLayout
+RootLayout.displayName = 'Root Layout'
+export default RootLayout

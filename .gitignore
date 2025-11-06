@@ -1,4 +1,3 @@
-# dependencies
 /node_modules
 /.pnp
 .pnp.*
@@ -9,47 +8,36 @@
 !.yarn/versions
 .yarn/install-state.gz
 
-# testing
 /coverage
 
-# next.js
 /.next/
 /out/
 
-# production
 /build
 .env.production
 
-# misc
 .DS_Store
 *.pem
 
-# debug
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# env files (can opt-in for committing if needed)
 .env*
 !.env.example
 
-# vercel
 .vercel
 
-# typescript
 *.tsbuildinfo
 next-env.d.ts
 
-### Jetbrains
-# User-specific stuff
 .idea/**/workspace.xml
 .idea/**/tasks.xml
 .idea/**/usage.statistics.xml
 .idea/**/dictionaries
 .idea/**/shelf
 
-# Sensitive or high-churn files
 .idea/**/dataSources/
 .idea/**/dataSources.ids
 .idea/**/dataSources.local.xml
@@ -58,7 +46,6 @@ next-env.d.ts
 .idea/**/uiDesigner.xml
 .idea/**/dbnavigator.xml
 
-# VScode
 .vscode/**/*
 !.vscode/settings.json
 !.vscode/tasks.json

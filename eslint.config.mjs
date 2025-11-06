@@ -11,6 +11,6 @@ export default createConfig({
     'readable-tailwind/no-duplicate-classes': ['error'],
     'readable-tailwind/no-unnecessary-whitespace': ['error'],
     'readable-tailwind/multiline': ['error', { printWidth: 120, preferSingleLine: true }],
-    'readable-tailwind/sort-classes': ['error', { entryPoint: 'src/assets/css/tailwind.css' }],
+    'readable-tailwind/sort-classes': ['error', { entryPoint: 'src/shared/styles/globals.css' }],
   },
 })
