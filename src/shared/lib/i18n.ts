@@ -1,4 +1,3 @@
-import { hasLocale } from 'next-intl'
 import { getRequestConfig } from 'next-intl/server'
 import { routing } from './routing'
 
@@ -10,10 +9,9 @@ declare global {
 
 export const TIME_ZONE = 'Asia/Samarkand'
 
-export default getRequestConfig(async ({ locale }) => {
-  'use cache'
-
-  const resolved = hasLocale(routing.locales, locale)
+export default getRequestConfig(async ({ requestLocale }) => {
+  const locale = await requestLocale
+  const resolved = locale && routing.locales.includes(locale as any)
     ? locale
     : routing.defaultLocale
 
