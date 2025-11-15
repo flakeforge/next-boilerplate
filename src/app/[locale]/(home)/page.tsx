@@ -1,12 +1,16 @@
 import type { Metadata } from 'next'
 import type { FC } from 'react'
-
 import { Home } from '@modules/home'
 
-export const metadata: Metadata = {
-  title: 'Welcome to FlakeForge',
-  description:
-    'Discover how FlakeForge transforms bold ideas into real-world digital products. Explore our open-source projects, scalable applications, and developer tools.',
+import { getTranslations } from 'next-intl/server'
+
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations('metadata')
+
+  return {
+    title: t('title'),
+    description: t('description'),
+  }
 }
 
 const HomePage: FC = () => <Home />

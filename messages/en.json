@@ -1,3 +1,17 @@
 {
-  "Brand": "FlakeForge"
+  "common": {
+    "brand": "FlakeForge",
+    "header": "Header",
+    "footer": "Footer",
+    "home": "Home"
+  },
+  "theme": {
+    "toggle": "Toggle theme",
+    "light": "Light mode",
+    "dark": "Dark mode"
+  },
+  "metadata": {
+    "title": "FlakeForge – Forging ideas into reality",
+    "description": "A collective of developers, designers, and technologists crafting open-source tools, scalable apps, and community-driven solutions with precision and care."
+  }
 }

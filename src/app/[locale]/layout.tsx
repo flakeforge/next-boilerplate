@@ -5,7 +5,7 @@ import { routing } from '@shared/lib'
 import { getLocale } from 'next-intl/server'
 import '@shared/styles/globals.css'
 
-export { metadata, viewport } from './config'
+export { generateMetadata, viewport } from './config'
 
 export function generateStaticParams() {
   return routing.locales.map(locale => ({ locale }))

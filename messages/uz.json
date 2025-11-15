@@ -1,3 +1,17 @@
 {
-  "Brand": "FlakeForge"
+  "common": {
+    "brand": "FlakeForge",
+    "header": "Sarlavha",
+    "footer": "Pastki qism",
+    "home": "Bosh sahifa"
+  },
+  "theme": {
+    "toggle": "Temani o'zgartirish",
+    "light": "Yorug' rejim",
+    "dark": "Qorong'u rejim"
+  },
+  "metadata": {
+    "title": "FlakeForge – G'oyalarni realga aylantirish",
+    "description": "Ochiq manba vositalari, masshtablanadigan ilovalar va jamoaviy yechimlarni yaratuvchi dasturchilar, dizaynerlar va texnologlar jamoasi."
+  }
 }
