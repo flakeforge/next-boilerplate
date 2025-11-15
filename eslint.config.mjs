@@ -8,7 +8,7 @@ const compat = new FlatCompat({
 
 const nextConfigs = compat.extends("next/core-web-vitals");
 
-export default [
+const eslintConfig = [
   ...nextConfigs,
   {
     plugins: { "readable-tailwind": readableTailwind },
@@ -26,3 +26,5 @@ export default [
     },
   },
 ];
+
+export default eslintConfig;
